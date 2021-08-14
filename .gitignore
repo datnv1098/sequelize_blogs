@@ -1,3 +1,4 @@
 node_modules
 .git
 dbTest.js
+.vscode
