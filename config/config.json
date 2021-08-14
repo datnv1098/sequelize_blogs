@@ -1,29 +1,23 @@
 {
   "development": {
-    "username": "root",
-    "password": "",
-    "database": "blog",
-    "host": "localhost",
-    "dialect": "mysql",
-    "pool": {
-        "max": 500,
-        "min": 0,
-        "acquire": 30000,
-        "idle": 10000
-    }
+    "username": "norealy",
+    "password": "*****",
+    "database": "blogs",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
   },
   "test": {
-    "username": "root",
-    "password": "",
-    "database": "blog",
-    "host": "localhost",
-    "dialect": "mysql"
+    "username": "xdatgd",
+    "password": "*****",
+    "database": "db_sequelize",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
   },
   "production": {
-    "username": "root",
-    "password": "",
-    "database": "blog",
-    "host": "localhost",
-    "dialect": "mysql"
+    "username": "xdatgd",
+    "password": "*****",
+    "database": "db_sequelize",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
   }
 }

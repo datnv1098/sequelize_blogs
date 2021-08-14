@@ -14,8 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Tag.init({
-    idtag:  {type:DataTypes.INTEGER,
-      primaryKey: true
+    idtag:  {
+      type:DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
     },
     nametag: DataTypes.STRING
   }, {

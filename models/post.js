@@ -10,14 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      models.Post.hasOne(models.User, {  foreignKey:"iduser",as:'puser',onDelete: 'cascade' });
-      models.Post.hasMany(models.Tag, {   foreignKey:"idtag",as:'ptag' });
+      models.Post.hasOne(models.User, { foreignKey: "iduser", as: 'puser', onDelete: 'cascade' });
+      models.Post.hasMany(models.Tag, { foreignKey: "idtag", as: 'ptag' });
     }
   };
   Post.init({
-    idpost:{
-      type:DataTypes.INTEGER,
-      primaryKey:true
+    idpost: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
     },
     idtag: DataTypes.INTEGER,
     iduser: DataTypes.INTEGER,

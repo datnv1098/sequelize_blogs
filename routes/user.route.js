@@ -7,11 +7,13 @@ let router = express.Router()
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
+
 router.use(session({
-	secret: 'alphawolf',
+	secret: process.env.SESSION_SECRET,
 	resave: true,
 	saveUninitialized: false
   }));
+
 router.get('/',async(req,res) => {
 	var users = await User.findAll();
 	return res.render('layout/user',
@@ -19,10 +21,12 @@ router.get('/',async(req,res) => {
 			users : users
 		});
 })
+
 router.get('/delete/:username',async(req,res) => {
 	await User.delete(req.params.username);
 	return res.redirect('/users')
 })
+
 router.get('/search',async(req,res)=>{
     let users = await User.findAll();
 	var q = req.query.q

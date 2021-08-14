@@ -1,12 +1,8 @@
-module.exports.checkCookie = function(req,res,next){
-    console.log(req.signedCookies.userId)
-    // console.log(req.session.user.iduser)
-    if(!req.signedCookies.userId){
+module.exports.checkCookie = function (req, res, next) {
+    console.log(typeof req.signedCookies['userId'])
+    if (!req.signedCookies['userId']) {
         console.log("You must login ~!")
-        res.redirect('/auth/login');
-        return;
+        return res.redirect('/auth/login');
     }
-    else{
-        next();
-    }
+    next();
 }

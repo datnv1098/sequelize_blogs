@@ -11,6 +11,11 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
+    const dataTags = {
+      idtag: 2,
+      nametag: 'ABC',
+    }
+    await queryInterface.bulkInsert('Tags',[{...dataTags}], {});
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -20,5 +25,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+     await queryInterface.bulkDelete('Tags', null, {});
   }
 };
